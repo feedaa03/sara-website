@@ -1,5 +1,5 @@
 /* ========================================
-   Design System Colors
+   Design System - Sara Almashoug
    ======================================== */
 :root {
     --primary: #00122B;
@@ -26,7 +26,6 @@ body {
     background: linear-gradient(135deg, var(--primary) 0%, #001a3d 100%);
     color: var(--white);
     line-height: 1.8;
-    font-size: 16px;
 }
 
 /* ========================================
@@ -38,28 +37,27 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    letter-spacing: -2px;
-}
-
 h2 {
     font-size: 3rem;
-    line-height: 1.3;
+    text-align: center;
+    color: var(--white);
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+h4 {
+    font-size: 1.2rem;
     color: var(--accent);
 }
 
 p {
     font-family: 'GJU Hi Light', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.2rem;
 }
 
 a {
@@ -73,9 +71,18 @@ a:hover {
 }
 
 /* ========================================
-   Header & Navigation
+   Container
    ======================================== */
-header {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ========================================
+   Navigation Bar
+   ======================================== */
+.navbar {
     position: fixed;
     top: 0;
     right: 0;
@@ -84,12 +91,13 @@ header {
     background: rgba(0, 18, 43, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--accent);
-    padding: 1rem 2rem;
+    padding: 1rem 0;
 }
 
-.navbar {
-    max-width: 1400px;
+.nav-container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,29 +105,29 @@ header {
 
 .logo {
     font-family: 'Brittany Signature', cursive;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--accent);
     font-weight: normal;
 }
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     list-style: none;
 }
 
 .nav-links a {
     font-family: 'GJU Hi Light', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    position: relative;
+    font-size: 1rem;
     color: var(--white);
+    position: relative;
+    padding-bottom: 5px;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: 0;
     right: 0;
     width: 0;
     height: 2px;
@@ -140,144 +148,146 @@ header {
    ======================================== */
 .hero {
     margin-top: 80px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 198, 255, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(30px); }
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(0, 18, 43, 0.8) 0%, rgba(0, 30, 60, 0.8) 100%);
 }
 
 .hero-content {
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
     width: 100%;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    animation: slideUp 0.8s ease;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 198, 255, 0.2);
+    border: 2px solid var(--accent);
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
 }
 
-.hero-title {
-    background: linear-gradient(135deg, var(--accent), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1.5rem;
-    animation: fadeInDown 0.8s ease 0.2s both;
-}
-
-.hero-description {
+.hero-text .subtitle {
     font-size: 1.3rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-family: 'GJU Hi Light', sans-serif;
+}
+
+.hero-text .description {
+    font-size: 1.1rem;
     margin-bottom: 2rem;
-    animation: fadeInUp 0.8s ease 0.4s both;
+    line-height: 1.9;
+    text-align: justify;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ========================================
-   Buttons
-   ======================================== */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--accent), #0099cc);
-    color: var(--primary);
-    padding: 1rem 2.5rem;
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
     border-radius: 50px;
     font-family: 'GJU Hi Light', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.3);
-    text-decoration: none;
-    animation: fadeInUp 0.8s ease 0.6s both;
 }
 
-.cta-button:hover {
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), #0099cc);
+    color: var(--primary);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.3);
+}
+
+.btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(0, 198, 255, 0.5);
-    background: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 198, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 /* ========================================
-   Container & Sections
+   Section Styles
    ======================================== */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
 section {
-    padding: 6rem 2rem;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--white);
+    padding: 5rem 0;
 }
 
 .section-subtitle {
     text-align: center;
-    color: var(--accent);
+    color: var(--secondary);
     font-family: 'GJU Hi Light', sans-serif;
     font-size: 1.1rem;
-    font-weight: 600;
     margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   Services Section
+   ======================================== */
+.services {
+    background: linear-gradient(180deg, rgba(0, 30, 60, 0.5) 0%, rgba(0, 18, 43, 0.5) 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(0, 198, 255, 0.05);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 198, 255, 0.25);
+    background: rgba(0, 198, 255, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ========================================
@@ -296,256 +306,320 @@ section h2 {
 
 .about-text p {
     text-align: justify;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
 }
 
-.stats {
+.timeline {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.stat-card {
-    background: rgba(0, 198, 255, 0.1);
-    border: 2px solid var(--accent);
-    padding: 2rem;
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+    box-shadow: 0 0 0 8px rgba(0, 198, 255, 0.2);
+}
+
+.timeline-content {
+    background: rgba(0, 198, 255, 0.08);
+    padding: 1.5rem;
     border-radius: 12px;
+    border-left: 3px solid var(--accent);
+}
+
+.timeline-content h4 {
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   Events Section
+   ======================================== */
+.events {
+    background: linear-gradient(180deg, rgba(0, 30, 60, 0.5) 0%, rgba(0, 18, 43, 0.5) 100%);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background: rgba(0, 198, 255, 0.05);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
 }
 
-.stat-card:hover {
-    background: rgba(0, 198, 255, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 198, 255, 0.2);
+.event-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    background: rgba(0, 198, 255, 0.1);
 }
 
-.stat-number {
-    font-family: 'Brittany Signature', cursive;
-    font-size: 2.5rem;
-    color: var(--accent);
+.event-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
     margin-bottom: 0.5rem;
 }
 
-.stat-label {
-    font-family: 'GJU Hi Light', sans-serif;
-    font-size: 1rem;
+.event-role {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
+    margin: 0;
 }
 
 /* ========================================
-   Services Section
+   Posts Section
    ======================================== */
-.services {
-    background: linear-gradient(180deg, rgba(0, 30, 60, 0.5) 0%, rgba(0, 18, 43, 0.5) 100%);
+.posts {
+    background: linear-gradient(180deg, rgba(0, 18, 43, 0.5) 0%, rgba(0, 30, 60, 0.5) 100%);
 }
 
-.cards-grid {
+.posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
 
-.card {
+.post-card {
     background: rgba(0, 198, 255, 0.05);
     border: 2px solid var(--accent);
     border-radius: 16px;
     padding: 2rem;
     transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.card:hover {
+.post-card:hover {
     border-color: var(--secondary);
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 198, 255, 0.25);
+    background: rgba(0, 198, 255, 0.1);
 }
 
-.card:hover::before {
-    opacity: 1;
-}
-
-.card-icon {
+.post-image {
     font-size: 3rem;
     margin-bottom: 1rem;
-    display: inline-block;
 }
 
-.card h3 {
-    position: relative;
-    z-index: 1;
+.post-card h3 {
     margin-bottom: 1rem;
+    flex-grow: 1;
 }
 
-.card p {
-    position: relative;
-    z-index: 1;
+.post-card p {
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.post-link {
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.post-link:hover {
+    color: var(--secondary);
 }
 
 /* ========================================
    Contact Section
    ======================================== */
 .contact {
-    background: linear-gradient(180deg, rgba(0, 18, 43, 0.5) 0%, rgba(0, 30, 60, 0.5) 100%);
+    background: linear-gradient(180deg, rgba(0, 30, 60, 0.5) 0%, rgba(0, 18, 43, 0.5) 100%);
 }
 
-.contact-content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-content > p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.contact-info {
+.social-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin-bottom: 3rem;
 }
 
-.contact-item {
+.social-card {
+    background: rgba(0, 198, 255, 0.05);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+}
+
+.social-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    background: rgba(0, 198, 255, 0.1);
+    color: var(--secondary);
+}
+
+.social-icon {
+    font-size: 2.5rem;
+}
+
+.social-card h3 {
+    margin: 0;
+}
+
+.social-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-card:hover p {
+    color: var(--secondary);
+}
+
+.contact-info {
     background: rgba(0, 198, 255, 0.1);
     border: 2px solid var(--accent);
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
 }
 
-.contact-item:hover {
-    background: rgba(0, 198, 255, 0.2);
-    transform: translateY(-5px);
-}
-
-.contact-icon {
-    font-size: 2.5rem;
-    display: block;
+.contact-info h3 {
     margin-bottom: 1rem;
 }
 
-.contact-item p {
-    text-align: center;
-    margin-bottom: 0;
+.contact-info a {
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 /* ========================================
    Footer
    ======================================== */
-footer {
+.footer {
     background: var(--primary);
-    padding: 3rem 2rem;
-    text-align: center;
     border-top: 2px solid var(--accent);
+    padding: 2rem 0;
+    text-align: center;
 }
 
-footer p {
-    font-family: 'GJU Hi Light', sans-serif;
-    color: rgba(255, 255, 255, 0.8);
+.footer p {
     margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
 /* ========================================
    Responsive Design
    ======================================== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
     }
 
     h2 {
         font-size: 2rem;
     }
 
-    h3 {
-        font-size: 1.4rem;
+    .hero-content {
+        grid-template-columns: 1fr;
     }
 
-    header {
-        padding: 1rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .hero {
-        margin-top: 70px;
-        min-height: 80vh;
-    }
-
-    .hero-title {
+    .hero-text h1 {
         font-size: 2.5rem;
     }
 
-    .hero-description {
-        font-size: 1.1rem;
+    .cta-buttons {
+        flex-direction: column;
     }
 
-    section {
-        padding: 4rem 1.5rem;
+    .btn-primary, .btn-secondary {
+        width: 100%;
     }
 
     .about-content {
         grid-template-columns: 1fr;
     }
 
-    .cards-grid {
+    .services-grid,
+    .events-grid,
+    .posts-grid,
+    .social-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-info {
-        grid-template-columns: 1fr;
+    section {
+        padding: 3rem 0;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
+    .navbar {
+        padding: 1rem 0;
     }
 
-    h2 {
-        font-size: 1.5rem;
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
     }
 
     .nav-links {
         display: none;
     }
 
-    .hero-description {
-        font-size: 1rem;
+    h2 {
+        font-size: 1.5rem;
     }
 
-    .cta-button {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+    .hero {
+        margin-top: 70px;
+        padding: 2rem 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image img {
+        max-width: 300px;
     }
 
     section {
-        padding: 3rem 1rem;
+        padding: 2rem 0;
     }
 }
