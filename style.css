@@ -572,3 +572,33 @@ transition:.3s;
 transform:translateY(-5px);
 box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
+/* ========================= */
+/* FIX FOR MOBILE SCREENS */
+/* ========================= */
+
+@media (max-width: 768px) {
+    /* تصغير المسافة العلوية والسفلية للسكشن */
+    .section {
+        padding: 60px 5%;
+    }
+
+    /* ضبط شبكة الكروت لتكون كرت واحد في كل صف */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* إلغاء الارتفاع الكبير المجبور على الجوال */
+    .card, .post-card {
+        min-height: auto !important; /* لكي لا يكون الكارد طويلاً وفارغاً */
+        height: auto !important;
+        padding: 20px 15px; /* تقليل الفراغات الداخلية */
+        aspect-ratio: auto; /* إلغاء المربع الإجباري على الجوال */
+    }
+
+    /* تصغير حجم الخط للعناوين داخل الكروت ليتناسب مع الجوال */
+    .card h3, .section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
