@@ -490,53 +490,85 @@ background:var(--primary);
 color:white;
 
 }
-@media (max-width:768px){
-
-.menu-toggle{
-display:block;
-}
-
-/* باقي كودك */
-
-}
-
 /* ========================= */
-/* POSTS SECTION */
+/* الإعدادات النهائية للمربعات */
 /* ========================= */
 
-.posts{
-text-align:center;
+.grid {
+    display: grid;
+    /* العرض 320 بكسل يضمن عدم انضغاط المنشورات */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
 }
 
-.posts-grid{
+.card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 20px;
+    transition: all .35s ease;
+    border: 1px solid transparent;
+    position: relative;
+    
+    /* بدلاً من المربع الإجباري، سنستخدم ارتفاعاً أدنى متناسباً */
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* يبدأ المحتوى من الأعلى لضمان عدم القص */
+    overflow: hidden;
+}
+
+/* أهم جزء: ضبط المنشورات داخل الكرت لتملأ العرض دون أن تُقص */
+.card blockquote, 
+.card iframe,
+.instagram-media, 
+.twitter-tweet {
+    width: 100% !important;
+    margin: 0 auto !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* تأثير التوسيع البسيط عند الوقوف بالماوس */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 1px solid var(--secondary);
+}
+/* ========================= */
+/* QUALIFICATIONS */
+/* ========================= */
+
+.qualifications{
+margin-top:35px;
+text-align:right;
+}
+
+.qualifications h3{
+margin-bottom:20px;
+font-size:24px;
+}
+
+.qualifications ul{
+list-style:none;
+padding:0;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
 }
 
-.post-card{
+.qualifications li{
 background:#ffffff;
-padding:25px;
+padding:18px;
 border-radius:14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+border-right:4px solid var(--secondary);
+box-shadow:0 6px 15px rgba(0,0,0,0.06);
+transition:.3s;
 }
 
-.post-card h3{
-margin-bottom:10px;
-}
-
-.post-btn{
-display:inline-block;
-margin-top:10px;
-padding:8px 16px;
-background:#111;
-color:white;
-border-radius:8px;
-text-decoration:none;
-font-size:14px;
-}
-
-.post-btn:hover{
-background:#444;
+.qualifications li:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
