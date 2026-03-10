@@ -495,47 +495,59 @@ color:white;
 /* ========================= */
 
 .grid {
-    display: grid;
-    /* العرض 320 بكسل يضمن عدم انضغاط المنشورات */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px;
-    margin-top: 40px;
-    justify-content: center;
+display: grid;
+
+/* يجعل الكاردز أكبر ومتوازنة */
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+gap: 40px;
+
+/* توسيط الشبكة داخل الصفحة */
+max-width: 1100px;
+margin: 60px auto 0 auto;
 }
 
 .card {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 20px;
-    transition: all .35s ease;
-    border: 1px solid transparent;
-    position: relative;
-    
-    /* بدلاً من المربع الإجباري، سنستخدم ارتفاعاً أدنى متناسباً */
-    min-height: 400px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* يبدأ المحتوى من الأعلى لضمان عدم القص */
-    overflow: hidden;
+
+background: #ffffff;
+padding: 25px;
+border-radius: 20px;
+
+transition: all .35s ease;
+border: 1px solid transparent;
+
+position: relative;
+
+/* ارتفاع مناسب للكارد */
+min-height: 280px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+text-align: center;
+
+overflow: hidden;
 }
 
-/* أهم جزء: ضبط المنشورات داخل الكرت لتملأ العرض دون أن تُقص */
-.card blockquote, 
-.card iframe,
-.instagram-media, 
-.twitter-tweet {
-    width: 100% !important;
-    margin: 0 auto !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* تأثير التوسيع البسيط عند الوقوف بالماوس */
+/* hover احترافي */
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border: 1px solid var(--secondary);
+transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+border: 1px solid var(--secondary);
+}
+
+/* ضبط المنشورات داخل الكارد */
+.card blockquote,
+.card iframe,
+.instagram-media,
+.twitter-tweet {
+
+width: 100% !important;
+max-width: 100% !important;
+margin: 0 auto !important;
+
 }
 /* ========================= */
 /* QUALIFICATIONS */
