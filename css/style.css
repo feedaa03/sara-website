@@ -80,7 +80,7 @@ img{max-width:100%;height:auto}
 .about{padding:5rem 0;background:var(--background)}
 .about-grid{display:grid;grid-template-columns:280px 1fr;gap:2.5rem;align-items:start;max-width:900px;margin:0 auto}
 .about-photo{display:flex;justify-content:center}
-.about-photo img{width:240px;height:280px;object-fit:cover;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.about-photo img{width:240px;height:280px;object-fit:cover;object-position:top;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
 .about-text{text-align:right;display:flex;flex-direction:column;gap:1.5rem}
 .about-text h2{font-size:2rem;font-weight:700;color:var(--primary)}
 .about-text p{color:var(--muted-fg);font-size:1rem;line-height:1.8}
