@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Sara Website",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3000", "/Users/feda/Desktop/Sara-website/.claude/worktrees/sad-torvalds"],
+      "port": 3000
+    }
+  ]
+}
