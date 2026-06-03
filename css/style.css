@@ -127,3 +127,5 @@ h1,h2,h3,h4,h5,h6{font-family:'Cairo',sans-serif}a{text-decoration:none;color:in
 .footer-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){.services-grid{grid-template-columns:1fr}.articles-grid{grid-template-columns:1fr}}
+
+.footer-contact{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center}
