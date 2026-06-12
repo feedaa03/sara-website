@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6{font-family:'GE Hili','Cairo',sans-serif}a{text-decoration:non
 .qual-card .inst{font-weight:600;font-size:.875rem}
 .qual-card .deg{color:rgba(0,20,41,.6);font-size:.875rem}
 .qual-card .yr{color:var(--muted-fg);font-size:.75rem;margin-top:.25rem}
-.services-bg{background:var(--background)}
+.services-bg{background:linear-gradient(180deg,hsl(210 40% 98%) 0%,hsl(213 80% 94%) 100%)}
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:72rem;margin:0 auto}
 .service-card{text-align:center;border:2px solid var(--secondary);border-radius:var(--radius);padding:2rem 1.5rem;background:var(--card);transition:all .3s}
 .service-card:hover{border-color:rgba(0,20,41,.3);box-shadow:0 10px 30px rgba(0,0,0,.08);transform:translateY(-8px)}
@@ -69,7 +69,7 @@ h1,h2,h3,h4,h5,h6{font-family:'GE Hili','Cairo',sans-serif}a{text-decoration:non
 .social-col{text-align:center}
 .social-col h3{font-size:1.125rem;font-weight:700;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
 .social-col iframe{border:0;border-radius:.75rem;width:100%;max-width:400px;height:480px}
-.consult-bg{background:var(--background)}
+.consult-bg{background:linear-gradient(180deg,hsl(213 80% 94%) 0%,hsl(213 70% 88%) 100%)}
 .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:52rem;margin:0 auto}
 .consult-shield{display:flex;justify-content:center}
 .consult-shield img{width:14rem;height:14rem;object-fit:contain;opacity:.8;filter:drop-shadow(0 10px 20px rgba(0,0,0,.1));transition:transform .3s}
@@ -83,8 +83,6 @@ h1,h2,h3,h4,h5,h6{font-family:'GE Hili','Cairo',sans-serif}a{text-decoration:non
 .footer-social a{width:2.25rem;height:2.25rem;border-radius:var(--radius);background:var(--primary);color:var(--primary-fg);display:flex;align-items:center;justify-content:center;transition:opacity .3s}
 .footer-social a:hover{opacity:.8}
 .footer-social svg{width:1rem;height:1rem;fill:currentColor}
-.footer-social svg[fill="none"]{fill:none;stroke:currentColor}
-.footer-social svg[fill="none"] [fill="currentColor"]{fill:currentColor}
 .footer-email{font-size:.875rem;color:var(--muted-fg);display:flex;align-items:center;gap:.5rem}
 .footer-copy{font-size:.75rem;color:var(--muted-fg)}
 .scroll-reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease-out,transform .7s ease-out}
